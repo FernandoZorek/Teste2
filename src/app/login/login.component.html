@@ -1,0 +1,57 @@
+<div class="card mt-3">
+  <div class="card-header">
+    <div class="float-left">
+      <h4><i class="bi bi-person-circle"></i> Login</h4>
+    </div>
+    <div class="float-right"></div>
+  </div>
+  <div class="card-body">
+    <div class="form-row">
+      <div class="col-sm-12">
+        <div class="container">
+          <div class="row justify-content-md-center"><i class="bi bi-chevron-right" style="font-size:98pt"></i>
+            <div class="col-4">
+              <div class="form-group">
+                <label for="exampleInputEmail1">E-mail</label>
+                <input
+                  name="nome"
+                  [(ngModel)]="usuario.nome"
+                  id="nome"
+                  type="text"
+                  class="form-control"
+                  aria-describedby="emailHelp"
+                  placeholder="E-mail"
+                />
+                <small id="emailHelp" class="form-text text-muted"
+                  >Login: admin Senha:123456</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Senha</label>
+                <input
+                  name="senha"
+                  [(ngModel)]="usuario.senha"
+                  id="senha"
+                  type="password"
+                  class="form-control"
+                  placeholder="Senha"
+                />
+              </div>
+              <button
+                type="submit"
+                (click)="fazerLogin()"
+                class="btn btn-primary"
+              >
+                Logar
+              </button>
+
+              <div *ngIf="mostrarErroLogin" routerLinkActive="active">
+                <b>Login Incorreto!</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

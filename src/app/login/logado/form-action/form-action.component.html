@@ -1,0 +1,568 @@
+<form
+  *ngIf="mostrarMenu"
+  class="needs-validation"
+  novalidate
+  [formGroup]="form"
+  style="padding-top: 10px"
+>
+  <div class="card mt-3">
+    <div class="card-header">
+      <div class="float-left">
+        <h4><i class="bi bi-clipboard-check"></i> Formulário</h4>
+      </div>
+      <div class="float-right"></div>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <div class="col-sm-12">
+          <input
+            type="text"
+            class="form-control"
+            id="titulo"
+            placeholder="Título do Formulário"
+            formControlName="titulo"
+            [ngClass]="{ 'is-invalid': submitted && hasError('titulo') }"
+          />
+        </div>
+      </div>
+
+      <hr />
+      <div class="form-row">
+        <div class="col-sm-6">
+          <label for="nome">CAMPO 1</label>
+          <select class="form-control" id="tipo" formControlName="tipo">
+            <option value="simples" selected>Texto simples</option>
+            <option value="grande">Texto grande</option>
+            <option value="combo">Combo</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <label for="tipo"><br /></label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            placeholder="Nome do Campo 1"
+            formControlName="nome"
+            [ngClass]="{ 'is-invalid': submitted && hasError('nome') }"
+          />
+        </div>
+      </div>
+      <div
+        class="displayNone"
+        [ngClass]="{ displayBlock: hasShow('tipo') === true }"
+      >
+        <br />
+        <div class="form-row">
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opA1"
+              placeholder="Opção 1"
+              formControlName="opA1"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opA1') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opA2"
+              placeholder="Opção 2"
+              formControlName="opA2"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opA2') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opA3"
+              placeholder="Opção 3"
+              formControlName="opA3"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opA3') }"
+            />
+          </div>
+        </div>
+        <hr />
+      </div>
+      <hr />
+      <div class="form-row">
+        <div class="col-sm-6">
+          <label for="tipo2">CAMPO 2</label>
+          <select class="form-control" id="tipo2" formControlName="tipo2">
+            <option value="simples" selected>Texto simples</option>
+            <option value="grande">Texto grande</option>
+            <option value="combo">Combo</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          <label for="nom2"><br /></label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome2"
+            placeholder="Nome do Campo 2"
+            formControlName="nome2"
+            [ngClass]="{ 'is-invalid': submitted && hasError('nome2') }"
+          />
+        </div>
+      </div>
+      <div
+        class="displayNone"
+        [ngClass]="{ displayBlock: hasShow('tipo2') === true }"
+      >
+        <br />
+        <div class="form-row">
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opB1"
+              placeholder="Opção 1"
+              formControlName="opB1"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opB1') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opB2"
+              placeholder="Opção 2"
+              formControlName="opB2"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opB2') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opB3"
+              placeholder="Opção 3"
+              formControlName="opB3"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opB3') }"
+            />
+          </div>
+        </div>
+        <hr />
+      </div>
+      <hr />
+      <div class="form-row">
+        <div class="col-sm-6">
+          <label for="tipo3">CAMPO 3</label>
+          <select class="form-control" id="tipo3" formControlName="tipo3">
+            <option value="simples" selected>Texto simples</option>
+            <option value="grande">Texto grande</option>
+            <option value="combo">Combo</option>
+          </select>
+        </div>
+        <hr />
+        <div class="col-sm-6">
+          <label for="nome3"><br /></label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome3"
+            placeholder="Nome do Campo 3"
+            formControlName="nome3"
+            [ngClass]="{ 'is-invalid': submitted && hasError('nome3') }"
+          />
+        </div>
+      </div>
+      <div
+        class="displayNone"
+        [ngClass]="{ displayBlock: hasShow('tipo3') === true }"
+      >
+        <br />
+        <div class="form-row">
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opC1"
+              placeholder="Opção 1"
+              formControlName="opC1"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opC1') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opC2"
+              placeholder="Opção 2"
+              formControlName="opC2"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opC2') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opC3"
+              placeholder="Opção 3"
+              formControlName="opC3"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opC3') }"
+            />
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <hr />
+      <div class="form-row">
+        <div class="col-sm-6">
+          <label for="tipo4">CAMPO 4</label>
+          <select class="form-control" id="tipo4" formControlName="tipo4">
+            <option value="simples" selected>Texto simples</option>
+            <option value="grande">Texto grande</option>
+            <option value="combo">Combo</option>
+          </select>
+        </div>
+        <hr />
+        <div class="col-sm-6">
+          <label for="nome4"><br /></label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome4"
+            placeholder="Nome do Campo 4"
+            formControlName="nome4"
+            [ngClass]="{ 'is-invalid': submitted && hasError('nome4') }"
+          />
+        </div>
+      </div>
+      <div
+        class="displayNone"
+        [ngClass]="{ displayBlock: hasShow('tipo4') === true }"
+      >
+        <br />
+        <div class="form-row">
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opD1"
+              placeholder="Opção 1"
+              formControlName="opD1"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opD1') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opD2"
+              placeholder="Opção 2"
+              formControlName="opD2"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opD2') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opD3"
+              placeholder="Opção 3"
+              formControlName="opD3"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opD3') }"
+            />
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <hr />
+      <div class="form-row">
+        <div class="col-sm-6">
+          <label for="tipo5">CAMPO 5</label>
+          <select class="form-control" id="tipo5" formControlName="tipo5">
+            <option value="simples" selected>Texto simples</option>
+            <option value="grande">Texto grande</option>
+            <option value="combo">Combo</option>
+          </select>
+        </div>
+        <hr />
+        <div class="col-sm-6">
+          <label for="nome5"><br /></label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome5"
+            placeholder="Nome do Campo 5"
+            formControlName="nome5"
+            [ngClass]="{ 'is-invalid': submitted && hasError('nome5') }"
+          />
+        </div>
+      </div>
+      <div
+        class="displayNone"
+        [ngClass]="{ displayBlock: hasShow('tipo5') === true }"
+      >
+        <br />
+        <div class="form-row">
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opE1"
+              placeholder="Opção 1"
+              formControlName="opE1"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opE1') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opE2"
+              placeholder="Opção 2"
+              formControlName="opE2"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opE2') }"
+            />
+          </div>
+          <div class="col-sm-4">
+            <input
+              type="text"
+              class="form-control"
+              id="opE3"
+              placeholder="Opção 3"
+              formControlName="opE3"
+              [ngClass]="{ 'is-invalid': submitted && hasError('opE3') }"
+            />
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <hr />
+      <hr />
+      <div style="margin-top: 10px">
+        <button type="sumit" class="btn btn-primary" (click)="onSubmit()">
+          Salvar
+        </button>
+        <button type="button" class="btn btn-default" (click)="onCancel()">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+<form *ngIf="!mostrarMenu" 
+[formGroup]="form2">
+  <div class="card-body" *ngFor="let gps of gpss">
+    <input [hidden]="true" type="text"
+    formControlName="form" id="form" value="{{ gps.id }}">
+    <div class="card mt-3">
+      <div class="card-header">
+        <div class="float-left">
+          <h4><i class="bi bi-clipboard-check"></i> {{ gps.titulo }}</h4>
+        </div>
+        <div class="float-right"></div>
+      </div>
+      <div class="card-body">
+        <hr />
+        <div class="form-row">
+          <div class="col-sm-12">
+            <label for="nome">{{ gps.nome }} </label>
+            <select 
+            *ngIf="gps.tipo === 'combo'"
+            class="form-control" 
+            id="campo_a" 
+            formControlName="campo_a"
+            [ngClass]="{ 'is-invalid': submitted && hasError('campo_a') }"
+            >
+              <option>{{ gps.opA1 }}</option>
+              <option>{{ gps.opA2 }}</option>
+              <option>{{ gps.opA3 }}</option>
+            </select>
+            <input
+             *ngIf="gps.tipo === 'simples'"
+              type="text"
+              class="form-control"
+              id="campo_a"
+              placeholder="{{ gps.nome }}"
+              formControlName="campo_a"
+              maxlength="30"
+              [ngClass]="{ 'is-invalid': submitted && hasError('campo_a') }"
+            >
+            <textarea 
+            *ngIf="gps.tipo === 'grande'"
+             type="text"
+             class="form-control"
+             id="campo_a"
+             placeholder="{{ gps.nome }}"
+             formControlName="campo_a"
+             maxlength="100"
+             [ngClass]="{ 'is-invalid': submitted && hasError('campo_a') }"
+           >{{ gps.nome }}</textarea>
+          </div>
+          
+          <div class="col-sm-12">
+            <label for="campo_b">{{ gps.nome2 }} </label>
+            <select 
+            *ngIf="gps.tipo === 'combo'"
+            class="form-control" 
+            id="campo_b" 
+            formControlName="campo_b"
+            [ngClass]="{ 'is-invalid': submitted && hasError('campo_b') }"
+            >
+              <option>{{ gps.opB1 }}</option>
+              <option>{{ gps.opB2 }}</option>
+              <option>{{ gps.opB3 }}</option>
+            </select>
+            <input
+             *ngIf="gps.tipo2 === 'simples'"
+              type="text"
+              class="form-control"
+              id="campo_b"
+              placeholder="{{ gps.nome2 }}"
+              formControlName="campo_b"
+              maxlength="30"
+              [ngClass]="{ 'is-invalid': submitted && hasError('campo_b') }"
+            >
+            <textarea 
+            *ngIf="gps.tipo2 === 'grande'"
+             type="text"
+             class="form-control"
+             id="campo_b"
+             placeholder="{{ gps.nome2 }}"
+             formControlName="campo_a"
+             maxlength="100"
+             [ngClass]="{ 'is-invalid': submitted && hasError('campo_b') }"
+           >{{ gps.nome2 }}</textarea>
+          </div>
+          
+          <div class="col-sm-12">
+            <label for="campo_c">{{ gps.nome3 }} </label>
+            <select 
+            *ngIf="gps.tipo3 === 'combo'"
+            class="form-control" 
+            id="campo_c" 
+            formControlName="campo_c"
+            [ngClass]="{ 'is-invalid': submitted && hasError('campo_c') }"
+            >
+              <option>{{ gps.opC1 }}</option>
+              <option>{{ gps.opC2 }}</option>
+              <option>{{ gps.opC3 }}</option>
+            </select>
+            <input
+             *ngIf="gps.tipo3 === 'simples'"
+              type="text"
+              class="form-control"
+              id="campo_c"
+              placeholder="{{ gps.nome3 }}"
+              formControlName="campo_c"
+              maxlength="30"
+              [ngClass]="{ 'is-invalid': submitted && hasError('campo_c') }"
+            >
+            <textarea 
+            *ngIf="gps.tipo3 === 'grande'"
+             type="text"
+             class="form-control"
+             id="campo_c"
+             placeholder="{{ gps.nome3 }}"
+             formControlName="campo_c"
+             maxlength="100"
+             [ngClass]="{ 'is-invalid': submitted && hasError('campo_c') }"
+           >{{ gps.nome3 }}</textarea>
+          </div>
+          
+          <div class="col-sm-12">
+            <label for="campo_d">{{ gps.nome4 }} </label>
+            <select 
+            *ngIf="gps.tipo4 === 'combo'"
+            class="form-control" 
+            id="campo_d" 
+            formControlName="campo_d"
+            [ngClass]="{ 'is-invalid': submitted && hasError('campo_d') }"
+            >
+              <option>{{ gps.opD1 }}</option>
+              <option>{{ gps.opD2 }}</option>
+              <option>{{ gps.opD3 }}</option>
+            </select>
+            <input
+             *ngIf="gps.tipo4 === 'simples'"
+              type="text"
+              class="form-control"
+              id="campo_d"
+              placeholder="{{ gps.nome4 }}"
+              formControlName="campo_d"
+              maxlength="30"
+              [ngClass]="{ 'is-invalid': submitted && hasError('campo_d') }"
+            >
+            <textarea 
+            *ngIf="gps.tipo4 === 'grande'"
+             type="text"
+             class="form-control"
+             id="campo_d"
+             placeholder="{{ gps.nome4 }}"
+             formControlName="campo_d"
+             maxlength="100"
+             [ngClass]="{ 'is-invalid': submitted && hasError('campo_d') }"
+           >{{ gps.nome4 }}</textarea>
+          </div>
+          
+          <div class="col-sm-12">
+            <label for="campo_e">{{ gps.nome5 }} </label>
+            <select 
+            *ngIf="gps.tipo5 === 'combo'"
+            class="form-control" 
+            id="campo_e" 
+            formControlName="campo_e"
+            [ngClass]="{ 'is-invalid': submitted && hasError('campo_e') }"
+            >
+              <option>{{ gps.opE1 }}</option>
+              <option>{{ gps.opE2 }}</option>
+              <option>{{ gps.opE3 }}</option>
+            </select>
+            <input
+             *ngIf="gps.tipo5 === 'simples'"
+              type="text"
+              class="form-control"
+              id="campo_e"
+              placeholder="{{ gps.nome5 }}"
+              formControlName="campo_e"
+              maxlength="30"
+              [ngClass]="{ 'is-invalid': submitted && hasError('campo_e') }"
+            >
+            <textarea 
+            *ngIf="gps.tipo5 === 'grande'"
+             type="text"
+             class="form-control"
+             id="campo_e"
+             placeholder="{{ gps.nome5 }}"
+             formControlName="campo_a"
+             maxlength="100"
+             [ngClass]="{ 'is-invalid': submitted && hasError('campo_e') }"
+           >{{ gps.nome5 }}</textarea>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+      <div style="margin-top: 10px">
+        <button type="sumit" class="btn btn-primary" (click)="onSubmit2()">
+          Cadastrar
+        </button>
+        <button type="button" class="btn btn-default" (click)="onCancel()">
+          Cancelar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</form>

@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink=""><i class="bi bi-shop" style=" color: cornflowerblue;"></i> Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li *ngIf="!mostrarMenu" routerLinkActive="active">
+        <a class="nav-link" routerLink="/inscricao"><i class="bi bi-ui-checks"></i>
+          Inscriver-se</a>
+      </li>
+      <li *ngIf="!mostrarMenu" routerLinkActive="active">
+        <a class="nav-link" routerLink="/login"><i class="bi bi-person-circle"></i>          
+          Login</a>
+      </li>
+      <li *ngIf="mostrarMenu" routerLinkActive="active">
+        <a class="nav-link" routerLink="/logado"><i class="bi bi-clipboard-check"></i>
+          Lista de Formulários</a>
+      </li>
+      <li *ngIf="mostrarMenu" routerLinkActive="active">
+        <a class="nav-link" routerLink="/cadastros"><i class="bi bi-ui-checks"></i>
+          Cadastros</a>
+      </li>
+        <li *ngIf="mostrarMenu" routerLinkActive="active">
+        <a  class="nav-link" routerLink="/sair"><i class="bi bi-x-circle-fill"></i>
+          Sair</a>
+      </li>
+    </ul>
+  </div>
+</nav>   
+<div class="container"><router-outlet></router-outlet></div>
